@@ -141,7 +141,7 @@ STATICFILES_DIRS = [
 
 
 # Media configuration
-MEDIA_URL = '/media/'
+MEDIA_URL = 'media/'
 MEDIA_ROOT = BASE_DIR / 'wynwood_house/media/'
 
 

@@ -19,4 +19,4 @@ class PropertyPhotoInline(admin.StackedInline):
 
 @admin.register(Property)
 class PropertyAdmin(admin.ModelAdmin):
-    pass
+    inlines = [PropertyPhotoInline,]

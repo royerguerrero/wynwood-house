@@ -1,0 +1,15 @@
+{% extends "admin/base.html" %}
+{% load i18n static %}
+
+{% block title %}{{ title }} | {% trans "Wynwood House Manager" %}{% endblock %}
+{% block extrastyle %}
+<link rel="shortcut icon" type="image/jpg" href="{% static 'favicon.png' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'admin.css' %}" />
+{% endblock %}
+{% block branding %}
+<a href="/admin/">
+    <img src="{% static 'images/negative-logo.svg' %}" alt="Wynwood House Logo">
+</a>
+{% endblock %}
+
+{% block nav-global %}{% endblock %}

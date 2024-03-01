@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load properties_extras %}
 {% load i18n %}
 
 {% block title %} Spain Properties {% endblock %}
@@ -14,38 +15,46 @@
 </section>
 <section class="highlight-destinations container">
     <h2 class="highlight-destination__heading">Nuestros Destinos</h2>
-    <div class="highlight-destinations__card row">
-        <div class="col-sm-4">
-            <img src="" alt="">
-            <h3 class="highlight-destinations__card--name">Barcelona</h3>
+    <div class="highlight-destinations__cards row">
+        {% for city in cities %}
+        <div class="highlight-destinations__card--card col-sm-4">
+            <img class="highlight-destinations__card--image" src="{{ city.photo.url }}" alt="{{ city.name }}">
+            <h3 class="highlight-destinations__card--name">{{ city.name }}</h3>
         </div>
+        {% endfor %}
     </div>
 </section>
-<section class="highlight-properties">
+<section class="highlight-properties container-fluid">
     <div class="highlight-properties__wrapper container">
         <h2 class="highlight-properties__heading">Nuestras Destacadas</h2>
         <div class="highlight-properties__cards row">
+            {% for property in properties %}
             <div class="col-sm-4 highlight-properties__card">
                 <div class="highlight-properties__card-header">
-                    <h3 class="highlight-properties__card-name">Modern 2BR in the Heart of Miraflores</h3>
-                    <p class="highlight-properties__card-location">Miraflores, Lima, Perú</p>
+                    <h3 class="highlight-properties__card-name">{{ property.name }}</h3>
+                    <p class="highlight-properties__card-location">{{ property.address }}</p>
                 </div>
                 <div class="highlight-properties__card-gallery">
-                    <img src="{% static 'images/gallery.png' %}" alt="Gallery Image">
-                    <div class="highlight-properties__card-controls">
-
-                    </div>
+                    {% for photo in property.get_photos %}
+                        <img src="{{ photo.photo.url }}" alt="{{ photo.id }}">
+                    {% endfor %}
                 </div>
                 <div class="highlight-properties__footer row">
                     <div class="highlight-properties__capability col-sm-6">
                         <span
-                            class="highlight-properties__capability-icon highlight-properties__capability-icon--people">2</span>
-                        <span
-                            class="highlight-properties__capability-icon highlight-properties__capability-icon--beds">1</span>
+                            class="highlight-properties__capability-icon highlight-properties__capability-icon--people">
+                            {{property.people_capacity }}
+                        </span>
+                        <span class="highlight-properties__capability-icon highlight-properties__capability-icon--beds">
+                            {{property.bed_capacity }}
+                        </span>
                     </div>
-                    <p class="highlight-properties__price col-sm-6 text-right">US$ 150 / noche</p>
+                    <p class="highlight-properties__price col-sm-6 text-right">
+                        US$ {{property.price_by_night|floatformat:"0" }} / noche
+                    </p>
                 </div>
             </div>
+            {% endfor %}
         </div>
     </div>
 </section>
@@ -74,7 +83,7 @@
 <section class="long-bookings container-fluid text-center">
     <h2 class="long-bookings__heading">{% translate 'long term rentals' %} </h2>
     <p class="long-bookings__text">">{% translate 'ask for our special rates for extended stays!' %}</p>
-    <a class="long-bookings__button btn btn-primary"> {% translate 'contact us'  %}</a>
+    <a class="long-bookings__button btn btn-primary"> {% translate 'contact us' %}</a>
 </section>
 {% endblock content %}
 

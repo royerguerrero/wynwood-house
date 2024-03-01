@@ -1,5 +1,5 @@
 <center>
-<h1>WynWood House* Landing</h1>
+<h1>Wynwood House* Landing</h1>
 <img src='banner.png'/>
 </center>
 

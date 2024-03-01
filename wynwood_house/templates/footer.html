@@ -1,0 +1,12 @@
+{% load static %}
+
+<footer class="container-fluid footer">
+    <div class="row">
+        <div class="col-sm-6">
+            <img src="{% static 'images/logo.svg' %}" alt="Wynwood House Logotype">
+        </div>
+        <div class="col-sm-6">
+            {% include 'booking/fast-booking-form.html' %}
+        </div>
+    </div> 
+</footer>

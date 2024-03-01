@@ -1,0 +1,82 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block title %} Spain Properties {% endblock %}
+
+
+{% block content %}
+<section class="above-the-fold">
+    <h1 class="above-the-fold__heading">ESPAÑA</h1>
+</section>
+<section class="booking-form container">
+    {% include 'booking/fast-booking-form.html' %}
+</section>
+<section class="highlight-destinations container">
+    <h2 class="highlight-destination__heading">Nuestros Destinos</h2>
+    <div class="highlight-destinations__card row">
+        <div class="col-sm-4">
+            <img src="" alt="">
+            <h3 class="highlight-destinations__card--name">Barcelona</h3>
+        </div>
+    </div>
+</section>
+<section class="highlight-properties">
+    <div class="highlight-properties__wrapper container">
+        <h2 class="highlight-properties__heading">Nuestras Destacadas</h2>
+        <div class="highlight-properties__cards row">
+            <div class="col-sm-4 highlight-properties__card">
+                <div class="highlight-properties__card-header">
+                    <h3 class="highlight-properties__card-name">Modern 2BR in the Heart of Miraflores</h3>
+                    <p class="highlight-properties__card-location">Miraflores, Lima, Perú</p>
+                </div>
+                <div class="highlight-properties__card-gallery">
+                    <img src="{% static 'images/gallery.png' %}" alt="Gallery Image">
+                    <div class="highlight-properties__card-controls">
+
+                    </div>
+                </div>
+                <div class="highlight-properties__footer row">
+                    <div class="highlight-properties__capability col-sm-6">
+                        <span
+                            class="highlight-properties__capability-icon highlight-properties__capability-icon--people">2</span>
+                        <span
+                            class="highlight-properties__capability-icon highlight-properties__capability-icon--beds">1</span>
+                    </div>
+                    <p class="highlight-properties__price col-sm-6 text-right">US$ 150 / noche</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="why-spain container">
+    <h2 class="why-spain__heading">¿Por Que España?</h2>
+    <div class="why-spain__content row">
+        <div class="col-sm-6">
+            <p>Ubicada en el corazón de la Península Ibérica, España es un destino cautivador por su cultura, su
+                gastronomía y por la historia que cuentan sus calles, pueblos y ciudades. Aquí se fusiona la
+                arquitectura colonial y moderna creando una vibrante atmósfera urbana que siempre tiene una historia por
+                contar.
+            </p>
+        </div>
+        <div class="col-sm-6">
+            <p>
+                Déjate llevar por su animada cultura, desde enérgicas interpretaciones de flamenco hasta festivales, y
+                disfruta de la exquisita variedad de sabores de su gastronomía mientras te rodeas de pintorescos
+                mercados locales y acogedores cafés. <br><br>
+
+                Aquí la modernidad y la tradición convergen para crear una experiencia de viaje única. Un destino donde
+                cada paso es un viaje a través del tiempo.k
+            </p>
+        </div>
+    </div>
+</section>
+<section class="long-bookings container-fluid text-center">
+    <h2 class="long-bookings__heading">{% translate 'long term rentals' %} </h2>
+    <p class="long-bookings__text">">{% translate 'ask for our special rates for extended stays!' %}</p>
+    <a class="long-bookings__button btn btn-primary"> {% translate 'contact us'  %}</a>
+</section>
+{% endblock content %}
+
+{% include 'footer.html' %}
+```

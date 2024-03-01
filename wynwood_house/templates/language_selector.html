@@ -1,0 +1,5 @@
+{% load i18n %}
+
+<a href="{% url 'set_language' %}?language=es&next={{ request.path }}">ES</a>
+/
+<a href="{% url 'set_language' %}?language=en&next={{ request.path }}">EN</a>

@@ -1,0 +1,12 @@
+{% load static %}
+
+<header class="header container-fluid position-fixed">
+    <div class="header__wrapper row">
+        <div class="header__brand col-sm-6">
+            <img src="{% static 'images/logo.svg' %}" alt="Wynwood House Logo">
+        </div>
+        <div class="header__language-selector col-sm-6 text-right">
+            {% include 'language_selector.html' %}
+        </div>
+    </div>
+</header>
